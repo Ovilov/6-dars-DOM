@@ -1,36 +1,50 @@
 import data from "./data.js";
-
+console.log(data);
 const template = document.querySelector(".job__template");
 const ul = document.querySelector(".job__list");
 
-data.forEach(() => {
+data.forEach((job) => {
   const {
+    featured,
     company,
     location,
-    position,
+    contract,
     postedAt,
     logo,
-    contract,
-    lokation,
+    position,
     languages,
     role,
     level,
-    tools,
-    featured,
   } = job;
   const li = template.content.cloneNode(true);
 
-  const image = li.querySelector(".job__img");
-  const Company = li.querySelector(".job__company");
-  const title = li.querySelector(".job__title");
-  const time = li.querySelector(".job__time");
-  const place = li.querySelector(".job__place");
-
+  const image = li.querySelector(".job__image");
   image.src = logo;
-  time.textContent = `${postedAt} | ${contract} | ${lokation}`;
-  title.textContent = position;
-  Company.textContent = company;
-  place.textContent = location;
+
+  const jobCompany = li.querySelector(".job__company");
+  jobCompany.textContent = `${company} `;
+
+  const jobPosition = li.querySelector(".job__title");
+  jobPosition.textContent = `${position} `;
+
+  const jobLanguages = li.querySelector(".job__languages");
+  jobLanguages.textContent = `${languages} `;
+
+  const jobRole = li.querySelector(".job__role");
+  jobRole.textContent = `${role}`;
+
+  const jobLevel = li.querySelector(".job__level");
+  jobLevel.textContent = `${level}`;
+
+  jobLanguages.innerHTML = `${languages
+    .map(
+      (lang) =>
+        `<span style="background-color: #effafa; color: #5ca5a5; padding: 4px 9px; border-radius: 3px; margin-right:15px; font-size:16px; line-height:24px; font-weight:700;">${lang}</span>`
+    )
+    .join(" ")}`;
+
+  const jobPlace = li.querySelector(".job__place");
+  jobPlace.textContent = `${postedAt} | ${contract} | ${location}`;
 
   ul.appendChild(li);
 });

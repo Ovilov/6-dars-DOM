@@ -8,27 +8,28 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="container">
+    <header class="header">
+      <span class="line"></span>
+      <span class="line"></span>
+    </header>
+
+    <main class="main">
       <ul class="job__list">
         <template class="job__template">
           <li class="job__item">
-            <div class="job__content">
-              <img
-                class="job__img"
-                src="https://placehold.co/88"
-                alt=""
-                width="88"
-                height="88"
-              />
-              <div class="wrapper">
-                <p class="job__company">Photosnap</p>
-                <h4 class="job__title">Senior Frontend Developer</h4>
-                <p class="job__time">5h | Full Time | USA Only</p>
-              </div>
+            <img class="job__image" src="https://palcehold.co/50" alt="" />
+
+            <div class="content__wrapper">
+              <p class="job__company">Photsnap</p>
+              <h4 class="job__title">Senior Frontend Developer</h4>
+              <p class="job__place">1d ago | Full Time | USA only</p>
             </div>
+            <p class="job__role"></p>
+            <p class="job__level"></p>
+            <p class="job__languages"></p>
           </li>
         </template>
       </ul>
-    </div>
+    </main>
   </body>
 </html>
